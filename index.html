@@ -733,67 +733,227 @@
     /* CAKE */
     .cake {
       position: relative;
-      width: 320px;
+      width: 340px;
       margin: 0 auto;
+      animation: cakeFloat 4s ease-in-out infinite;
     }
+    @keyframes cakeFloat {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* Cake glow */
+    .cake::before {
+      content: '';
+      position: absolute;
+      bottom: -20px; left: 50%;
+      transform: translateX(-50%);
+      width: 300px; height: 60px;
+      background: radial-gradient(ellipse, rgba(233,30,144,0.15), transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    /* Top surface */
     .cake-top {
-      width: 280px; height: 35px;
-      background: linear-gradient(135deg, #ff9ec6, #ff6fb7);
+      width: 260px; height: 30px;
+      background: linear-gradient(135deg, #ffb6d9, #f8bbd0);
       border-radius: 50%;
       margin: 0 auto;
       position: relative; z-index: 10;
-      box-shadow: 0 4px 15px rgba(255,111,183,0.3);
+      box-shadow: 0 4px 15px rgba(233,30,144,0.2), inset 0 -3px 6px rgba(233,30,144,0.15);
     }
+    /* Text on cake top */
+    .cake-top::after {
+      content: 'Chanu';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Great Vibes', cursive;
+      font-size: 1rem;
+      color: #c2185b;
+      opacity: 0.6;
+    }
+
+    /* Shared layer styles */
     .cake-layer {
-      width: 280px; height: 70px;
-      margin: -12px auto 0;
-      border-radius: 0 0 20px 20px;
       position: relative; z-index: 9;
+      overflow: visible;
     }
+
+    /* Layer 1 - Top (pink) */
     .cake-layer-1 {
-      background: linear-gradient(180deg, #ff6fb7, #e05a9f);
+      width: 260px; height: 75px;
+      margin: -10px auto 0;
+      background: linear-gradient(180deg, #f48fb1, #e91e90);
+      border-radius: 0 0 18px 18px;
+      box-shadow: inset 0 -4px 8px rgba(0,0,0,0.1);
     }
+
+    /* Layer 2 - Middle (light pink) */
     .cake-layer-2 {
-      width: 300px; height: 65px;
-      background: linear-gradient(180deg, #c084fc, #9b5de5);
-      margin-top: -5px;
-      border-radius: 0 0 22px 22px;
+      width: 290px; height: 70px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, #f8bbd0, #f48fb1);
+      border-radius: 0 0 20px 20px;
+      box-shadow: inset 0 -4px 8px rgba(0,0,0,0.08);
     }
+
+    /* Layer 3 - Bottom (white/cream) */
     .cake-layer-3 {
-      width: 320px; height: 60px;
-      background: linear-gradient(180deg, #fbbf24, #e6a817);
-      margin-top: -5px;
-      border-radius: 0 0 25px 25px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      width: 320px; height: 65px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, #fff0f5, #fce4ec);
+      border-radius: 0 0 22px 22px;
+      box-shadow: 0 12px 35px rgba(233,30,144,0.15), inset 0 -4px 8px rgba(233,30,144,0.08);
     }
+
+    /* Frosting drips */
     .cake-frosting {
       position: absolute;
-      top: -5px; left: 0; right: 0;
-      height: 18px;
-      overflow: hidden;
+      top: -2px; left: 0; right: 0;
+      height: 22px;
+      overflow: visible;
+      z-index: 11;
     }
-    .cake-frosting::before {
-      content: '';
-      display: block;
-      height: 30px;
-      background: radial-gradient(ellipse at 15px 0, #fff 12px, transparent 13px),
-                  radial-gradient(ellipse at 45px 0, #fff 12px, transparent 13px),
-                  radial-gradient(ellipse at 75px 0, #fff 12px, transparent 13px),
-                  radial-gradient(ellipse at 105px 0, #fff 12px, transparent 13px),
-                  radial-gradient(ellipse at 135px 0, #fff 12px, transparent 13px),
-                  radial-gradient(ellipse at 165px 0, #fff 12px, transparent 13px),
-                  radial-gradient(ellipse at 195px 0, #fff 12px, transparent 13px),
-                  radial-gradient(ellipse at 225px 0, #fff 12px, transparent 13px),
-                  radial-gradient(ellipse at 255px 0, #fff 12px, transparent 13px),
-                  radial-gradient(ellipse at 285px 0, #fff 12px, transparent 13px);
-      opacity: 0.5;
+    .drip {
+      position: absolute;
+      top: 0;
+      width: 14px;
+      background: linear-gradient(180deg, #fff, #ffe0ec);
+      border-radius: 0 0 8px 8px;
+      opacity: 0.85;
     }
-    .cake-plate {
-      width: 360px; height: 18px;
-      background: linear-gradient(180deg, #888, #555);
+
+    /* Decorative hearts on cake */
+    .cake-hearts {
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      display: flex;
+      justify-content: space-around;
+      padding: 0 15px;
+      z-index: 12;
+    }
+    .cake-hearts span {
+      font-size: 0.7rem;
+      opacity: 0.6;
+      animation: heartPop 2s ease infinite;
+    }
+    .cake-hearts span:nth-child(2) { animation-delay: 0.3s; }
+    .cake-hearts span:nth-child(3) { animation-delay: 0.6s; }
+    .cake-hearts span:nth-child(4) { animation-delay: 0.9s; }
+    .cake-hearts span:nth-child(5) { animation-delay: 1.2s; }
+    @keyframes heartPop {
+      0%,100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.3); opacity: 1; }
+    }
+
+    /* Decorative dots/pearls */
+    .cake-pearls {
+      position: absolute;
+      bottom: 8px; left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      z-index: 12;
+    }
+    .pearl {
+      width: 6px; height: 6px;
+      background: rgba(255,255,255,0.8);
       border-radius: 50%;
-      margin: -3px auto 0;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      box-shadow: 0 0 4px rgba(255,255,255,0.5);
+    }
+
+    /* Ribbon between layers */
+    .cake-ribbon {
+      position: absolute;
+      bottom: -3px; left: -5px; right: -5px;
+      height: 10px;
+      background: linear-gradient(90deg, #e91e90, #f472b6, #e91e90, #f472b6, #e91e90);
+      border-radius: 0 0 3px 3px;
+      z-index: 11;
+      opacity: 0.7;
+    }
+
+    /* Rose decorations */
+    .cake-roses {
+      position: absolute;
+      top: -15px; left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 13;
+    }
+    .cake-rose {
+      font-size: 1.2rem;
+      animation: roseWiggle 3s ease infinite;
+      filter: drop-shadow(0 2px 4px rgba(233,30,144,0.3));
+    }
+    .cake-rose:nth-child(2) { animation-delay: 1s; }
+    .cake-rose:nth-child(3) { animation-delay: 2s; }
+    @keyframes roseWiggle {
+      0%,100% { transform: rotate(0deg); }
+      25% { transform: rotate(8deg); }
+      75% { transform: rotate(-8deg); }
+    }
+
+    /* Age badge on cake */
+    .cake-age {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #c2185b;
+      text-shadow: 0 1px 3px rgba(255,255,255,0.5);
+      z-index: 12;
+    }
+
+    /* Cake plate */
+    .cake-plate {
+      width: 380px; height: 20px;
+      background: linear-gradient(180deg, #f8bbd0, #e8a0b8);
+      border-radius: 50%;
+      margin: -4px auto 0;
+      box-shadow: 0 6px 20px rgba(233,30,144,0.15);
+      position: relative; z-index: 8;
+    }
+    .cake-plate::after {
+      content: '';
+      position: absolute;
+      top: 4px; left: 15px; right: 15px;
+      height: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.3), transparent);
+      border-radius: 50%;
+    }
+
+    /* Table surface */
+    .cake-table {
+      width: 420px; height: 8px;
+      background: linear-gradient(180deg, #f0d0dc, #e8b8c8);
+      border-radius: 50%;
+      margin: 2px auto 0;
+      box-shadow: 0 4px 15px rgba(233,30,144,0.1);
+    }
+
+    /* Sparkle particles around cake */
+    .cake-sparkles {
+      position: absolute;
+      inset: -30px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .cake-sparkle {
+      position: absolute;
+      width: 4px; height: 4px;
+      background: #e91e90;
+      border-radius: 50%;
+      animation: sparkleFloat 3s ease-in-out infinite;
+    }
+    @keyframes sparkleFloat {
+      0%,100% { opacity: 0; transform: translateY(0) scale(0); }
+      50% { opacity: 1; transform: translateY(-20px) scale(1); }
     }
 
     /* CANDLES */
@@ -966,14 +1126,16 @@
     }
 
     @media (max-width: 480px) {
-      .cake { width: 260px; }
-      .cake-top { width: 230px; }
-      .cake-layer { width: 230px; }
-      .cake-layer-2 { width: 250px; }
-      .cake-layer-3 { width: 260px; }
-      .cake-plate { width: 290px; }
-      .candles-row { max-width: 230px; gap: 4px; }
-      .candle-stick { height: 26px; width: 5px; }
+      .cake { width: 280px; }
+      .cake-top { width: 210px; }
+      .cake-layer-1 { width: 210px; height: 60px; }
+      .cake-layer-2 { width: 240px; height: 55px; }
+      .cake-layer-3 { width: 270px; height: 50px; }
+      .cake-plate { width: 310px; }
+      .cake-table { width: 340px; }
+      .candles-row { max-width: 210px; gap: 3px; }
+      .candle-stick { height: 24px; width: 5px; }
+      .cake-age { font-size: 1.3rem; }
     }
 
     /* ═══════════════════════════════════
@@ -1230,18 +1392,74 @@
     <div class="candles-row" id="candlesRow"></div>
 
     <!-- CAKE -->
-    <div class="cake">
+    <div class="cake" id="cakeElement">
+      <!-- Sparkles around cake -->
+      <div class="cake-sparkles" id="cakeSparkles"></div>
+
+      <!-- Cake top surface -->
       <div class="cake-top"></div>
+
+      <!-- Layer 1 - Top Pink -->
       <div class="cake-layer cake-layer-1">
-        <div class="cake-frosting"></div>
+        <div class="cake-frosting">
+          <div class="drip" style="left:12%; height:18px;"></div>
+          <div class="drip" style="left:28%; height:25px;"></div>
+          <div class="drip" style="left:45%; height:15px;"></div>
+          <div class="drip" style="left:62%; height:22px;"></div>
+          <div class="drip" style="left:78%; height:17px;"></div>
+        </div>
+        <div class="cake-hearts">
+          <span>&#10084;</span><span>&#10084;</span><span>&#10084;</span><span>&#10084;</span><span>&#10084;</span>
+        </div>
+        <div class="cake-ribbon"></div>
       </div>
+
+      <!-- Layer 2 - Middle Light Pink -->
       <div class="cake-layer cake-layer-2">
-        <div class="cake-frosting"></div>
+        <div class="cake-frosting">
+          <div class="drip" style="left:8%; height:20px;"></div>
+          <div class="drip" style="left:22%; height:28px;"></div>
+          <div class="drip" style="left:38%; height:16px;"></div>
+          <div class="drip" style="left:55%; height:24px;"></div>
+          <div class="drip" style="left:70%; height:19px;"></div>
+          <div class="drip" style="left:85%; height:22px;"></div>
+        </div>
+        <div class="cake-age">26</div>
+        <div class="cake-pearls">
+          <div class="pearl"></div><div class="pearl"></div><div class="pearl"></div>
+          <div class="pearl"></div><div class="pearl"></div><div class="pearl"></div>
+          <div class="pearl"></div><div class="pearl"></div><div class="pearl"></div>
+        </div>
+        <div class="cake-ribbon"></div>
       </div>
+
+      <!-- Layer 3 - Bottom White -->
       <div class="cake-layer cake-layer-3">
-        <div class="cake-frosting"></div>
+        <div class="cake-frosting">
+          <div class="drip" style="left:5%; height:22px;"></div>
+          <div class="drip" style="left:18%; height:30px;"></div>
+          <div class="drip" style="left:32%; height:18px;"></div>
+          <div class="drip" style="left:48%; height:26px;"></div>
+          <div class="drip" style="left:62%; height:20px;"></div>
+          <div class="drip" style="left:76%; height:28px;"></div>
+          <div class="drip" style="left:90%; height:16px;"></div>
+        </div>
+        <div class="cake-roses">
+          <span class="cake-rose">&#127801;</span>
+          <span class="cake-rose">&#127801;</span>
+          <span class="cake-rose">&#127801;</span>
+        </div>
+        <div class="cake-pearls">
+          <div class="pearl"></div><div class="pearl"></div><div class="pearl"></div>
+          <div class="pearl"></div><div class="pearl"></div><div class="pearl"></div>
+          <div class="pearl"></div><div class="pearl"></div><div class="pearl"></div>
+          <div class="pearl"></div><div class="pearl"></div>
+        </div>
       </div>
+
+      <!-- Plate & Table -->
       <div class="cake-plate"></div>
+      <div class="cake-table"></div>
     </div>
   </div>
 
@@ -1635,6 +1853,21 @@
   // ─── CAKE & CANDLES ───
   const TOTAL_CANDLES = 26;
   let candlesRemaining = TOTAL_CANDLES;
+
+  // ─── CAKE SPARKLES ───
+  (function() {
+    const sparkles = document.getElementById('cakeSparkles');
+    for (let i = 0; i < 12; i++) {
+      const s = document.createElement('div');
+      s.className = 'cake-sparkle';
+      s.style.left = Math.random() * 100 + '%';
+      s.style.top = Math.random() * 100 + '%';
+      s.style.animationDelay = (Math.random() * 3) + 's';
+      s.style.animationDuration = (Math.random() * 2 + 2) + 's';
+      s.style.width = s.style.height = (Math.random() * 4 + 2) + 'px';
+      sparkles.appendChild(s);
+    }
+  })();
 
   (function buildCandles() {
     const row = document.getElementById('candlesRow');
