@@ -652,6 +652,57 @@
 
 
     /* ═══════════════════════════════════
+       LOVE LETTER
+    ═══════════════════════════════════ */
+    .love-letter {
+      padding: 100px 20px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, var(--dark), #0d001a);
+    }
+    .letter-card {
+      max-width: 600px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,111,183,0.15);
+      border-radius: 24px;
+      padding: 50px 45px;
+      position: relative;
+      overflow: hidden;
+    }
+    .letter-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--pink), var(--purple), var(--pink));
+    }
+    .letter-card::after {
+      content: '"';
+      position: absolute; top: 15px; right: 25px;
+      font-size: 6rem;
+      font-family: 'Great Vibes', cursive;
+      color: rgba(255,111,183,0.08);
+      line-height: 1;
+    }
+    .letter-dear {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      color: var(--pink);
+      margin-bottom: 20px;
+    }
+    .letter-body {
+      color: rgba(255,255,255,0.6);
+      line-height: 2;
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+    .letter-sign {
+      margin-top: 25px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.5rem;
+      color: var(--purple);
+      text-align: right;
+    }
+
+    /* ═══════════════════════════════════
        CAKE & CANDLES CTA
     ═══════════════════════════════════ */
     .cta {
@@ -967,7 +1018,7 @@
 <!-- INTRO SPLASH (tap to start music + site) -->
 <div class="intro-splash" id="introSplash">
   <div style="font-size:5rem; margin-bottom:20px; animation: preloaderBounce 1.5s ease infinite;">&#127874;</div>
-  <div class="intro-splash-text">Happy Birthday Chanu!</div>
+  <div class="intro-splash-text">Happy Birthday My Love!</div>
   <div class="intro-tap">Tap anywhere to celebrate</div>
 </div>
 <style>
@@ -1012,11 +1063,11 @@
 ══════════════════════════════════════════ -->
 <section class="hero" id="hero">
   <div class="hero-badge">September 10</div>
-  <h1>Happy Birthday</h1>
+  <h1>Happy Birthday My Love</h1>
   <div class="hero-name">Chanu</div>
-  <div class="hero-emoji">&#127874; &#127880; &#127881;</div>
-  <p class="hero-tagline">Today we celebrate the most wonderful person. Here's to love, laughter, and everything beautiful in the year ahead!</p>
-  <div class="hero-date-badge">&#128197; September 10</div>
+  <div class="hero-emoji">&#128152; &#127874; &#128152;</div>
+  <p class="hero-tagline">To the one who makes my heart skip a beat every single day. Today the world celebrates because you were born into it, and I celebrate because you chose to be mine.</p>
+  <div class="hero-date-badge">&#128152; September 10 &#128152;</div>
   <div class="scroll-hint"><div></div></div>
 </section>
 
@@ -1029,8 +1080,8 @@
     <div class="pi-dots" id="piDots"></div>
   </div>
   <div class="photo-intro-right reveal">
-    <h2>Memories of You</h2>
-    <p>Every photo tells a story of joy, love, and beautiful moments. Here's a glimpse of the memories that make you so special.</p>
+    <h2>Our Beautiful Moments</h2>
+    <p>Every photo is a heartbeat, a stolen glance, a moment where I fell in love with you all over again. You are my favorite memory and my greatest adventure.</p>
     <div class="pi-counter" id="piCounter"></div>
   </div>
 </section>
@@ -1040,8 +1091,8 @@
 ══════════════════════════════════════════ -->
 <section class="countdown" id="countdown-sec">
   <div class="section-header reveal">
-    <h2>Counting Down to the Big Day</h2>
-    <p>Every second matters</p>
+    <h2>Counting Down to Your Special Day</h2>
+    <p>Every second without celebrating you feels too long</p>
   </div>
   <div class="countdown-row reveal" id="cdRow"></div>
 </section>
@@ -1058,39 +1109,39 @@
 ══════════════════════════════════════════ -->
 <section class="wishes" id="wishes-sec">
   <div class="section-header reveal">
-    <h2>Birthday Wishes</h2>
-    <p>With all our love</p>
+    <h2>Words From My Heart</h2>
+    <p>For the love of my life</p>
   </div>
   <div class="wishes-grid">
     <div class="wish reveal">
-      <span class="wish-emoji">&#10024;</span>
-      <h3>Dream Big</h3>
-      <p>May all your dreams come true this year. Every wish you make today carries the magic of this special day.</p>
+      <span class="wish-emoji">&#128152;</span>
+      <h3>My Heart is Yours</h3>
+      <p>Every beat of my heart whispers your name. You are the love story I always dreamed of, and I'm so grateful you're mine.</p>
     </div>
     <div class="wish reveal">
-      <span class="wish-emoji">&#128150;</span>
-      <h3>Love & Joy</h3>
-      <p>Wishing you endless love, countless smiles, and a heart full of happiness. You deserve the world.</p>
+      <span class="wish-emoji">&#127801;</span>
+      <h3>You Are My Everything</h3>
+      <p>You're my first thought in the morning and my last wish at night. Being with you makes every ordinary moment feel magical.</p>
+    </div>
+    <div class="wish reveal">
+      <span class="wish-emoji">&#128171;</span>
+      <h3>Forever & Always</h3>
+      <p>I promise to love you more with each passing day. No matter where life takes us, my heart will always find its way to you.</p>
+    </div>
+    <div class="wish reveal">
+      <span class="wish-emoji">&#10024;</span>
+      <h3>You Make Me Better</h3>
+      <p>Your smile heals me, your laugh completes me, and your love makes me the luckiest person alive. Thank you for being you.</p>
     </div>
     <div class="wish reveal">
       <span class="wish-emoji">&#127775;</span>
-      <h3>Shine Bright</h3>
-      <p>You light up every room you walk into. Keep shining and spreading your warmth to everyone.</p>
+      <h3>My Beautiful Star</h3>
+      <p>You shine brighter than all the stars in the sky. The way you light up my world is something words can never fully describe.</p>
     </div>
     <div class="wish reveal">
-      <span class="wish-emoji">&#127881;</span>
-      <h3>Celebrate You</h3>
-      <p>Today is all about you! Appreciate how far you've come and how amazing you truly are.</p>
-    </div>
-    <div class="wish reveal">
-      <span class="wish-emoji">&#127752;</span>
-      <h3>Endless Adventures</h3>
-      <p>May this new year of your life be full of exciting adventures, new discoveries, and moments that take your breath away.</p>
-    </div>
-    <div class="wish reveal">
-      <span class="wish-emoji">&#129505;</span>
-      <h3>You Are Loved</h3>
-      <p>Never forget how deeply you are loved and cherished. You make the world a better place just by being in it.</p>
+      <span class="wish-emoji">&#128147;</span>
+      <h3>Endlessly Yours</h3>
+      <p>If I had to choose between loving you and breathing, I would use my last breath to tell you I love you. Happy birthday, my love.</p>
     </div>
   </div>
 </section>
@@ -1107,8 +1158,8 @@
 ══════════════════════════════════════════ -->
 <section class="gallery" id="gallery-sec">
   <div class="section-header reveal">
-    <h2>Precious Moments</h2>
-    <p>A gallery of beautiful memories</p>
+    <h2>Us, Together</h2>
+    <p>Every moment with you is a treasure</p>
   </div>
   <div class="gallery-masonry reveal" id="galleryMasonry"></div>
 </section>
@@ -1118,33 +1169,49 @@
 ══════════════════════════════════════════ -->
 <section class="featured" id="featured-sec">
   <div class="section-header reveal">
-    <h2>Special Memories</h2>
-    <p>Close to the heart</p>
+    <h2>My Favorite Views</h2>
+    <p>You are the prettiest thing I've ever seen</p>
   </div>
   <div class="featured-row reveal">
     <div class="featured-card">
       <img src="photos/photo1.jpg" alt="">
-      <div class="fc-text"><h3>Beautiful Soul</h3><p>A moment to remember forever</p></div>
+      <div class="fc-text"><h3>My Whole World</h3><p>You are everything I never knew I needed</p></div>
     </div>
     <div class="featured-card">
       <img src="photos/photo8.jpg" alt="">
-      <div class="fc-text"><h3>Pure Joy</h3><p>Happiness looks so good on you</p></div>
+      <div class="fc-text"><h3>That Smile</h3><p>The smile that stole my heart forever</p></div>
     </div>
     <div class="featured-card">
       <img src="photos/photo15.jpg" alt="">
-      <div class="fc-text"><h3>Golden Memories</h3><p>Treasured moments together</p></div>
+      <div class="fc-text"><h3>My Forever</h3><p>With you is where I always want to be</p></div>
     </div>
   </div>
 </section>
 
 
 <!-- ══════════════════════════════════════════
+     LOVE LETTER
+══════════════════════════════════════════ -->
+<section class="love-letter" id="letter-sec">
+  <div class="letter-card reveal">
+    <div class="letter-dear">My Dearest Chanu,</div>
+    <div class="letter-body">
+      I still remember the first moment I saw you — how my world suddenly became more colorful, more meaningful, more alive. Every day since then, you've shown me what real love feels like.<br><br>
+      You are my calm in every storm, my smile in every sadness, and my reason to be a better person. On your special day, I just want you to know — you are the most beautiful thing that ever happened to me.<br><br>
+      I don't need the stars when I have your eyes. I don't need music when I have your laugh. I don't need dreams when I have you.<br><br>
+      Happy Birthday, my love. Today, tomorrow, and forever — I'm yours.
+    </div>
+    <div class="letter-sign">Forever yours, with all my love</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
      CAKE & CANDLES
 ══════════════════════════════════════════ -->
 <section class="cta" id="cta-sec">
   <div class="section-header reveal">
-    <h2>Make a Wish & Blow the Candles!</h2>
-    <p>Tap each candle to blow it out</p>
+    <h2>Close Your Eyes, Make a Wish</h2>
+    <p>Blow out the candles, my love</p>
   </div>
 
   <div class="cake-container reveal">
@@ -1173,17 +1240,17 @@
 
 <!-- SURPRISE OVERLAY -->
 <div class="surprise-overlay" id="surpriseOverlay">
-  <div class="surprise-text">Happy 26th Birthday!</div>
+  <div class="surprise-text">Happy 26th Birthday, My Love!</div>
   <div class="surprise-age">26</div>
   <div class="surprise-sub">
-    Wishing you the most magical year ahead, Chanu! May every dream you hold close to your heart come true. You are amazing!
+    You are the reason I believe in love. Every day with you is a gift, and today I get to celebrate the most beautiful gift the world ever gave me — you. I love you more than words could ever say. Here's to forever, my Chanu.
   </div>
-  <button class="surprise-close" onclick="closeSurprise()">Continue Celebrating</button>
+  <button class="surprise-close" onclick="closeSurprise()">I Love You Too</button>
 </div>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p>Made with <span class="ft-heart">&#10084;</span> for Chanu's Birthday &middot; September 10</p>
+  <p>Made with all my <span class="ft-heart">&#10084;</span> for the love of my life &middot; Happy Birthday Chanu &middot; September 10</p>
 </footer>
 
 <script>
@@ -1289,7 +1356,7 @@
   // ─── FLOATING PARTICLES ───
   (function() {
     const c = document.getElementById('bgParticles');
-    const icons = ['\u2728','\u2764\uFE0F','\u2B50','\uD83C\uDF89','\uD83C\uDF82','\uD83C\uDF88','\uD83C\uDF1F'];
+    const icons = ['\u2728','\u2764\uFE0F','\u2764\uFE0F','\u2764\uFE0F','\uD83D\uDC98','\uD83D\uDC96','\uD83C\uDF39','\uD83C\uDF1F','\uD83C\uDF82','\u2B50'];
     setInterval(() => {
       const p = document.createElement('div');
       p.textContent = icons[Math.floor(Math.random()*icons.length)];
@@ -1383,11 +1450,11 @@
   // ─── GALLERY MASONRY ───
   (function() {
     const captions = [
-      'A beautiful memory','Unforgettable moment','Smiles and laughter',
-      'Cherished together','Pure happiness','Best day ever',
-      'Golden moments','Forever in heart','Sweet memories',
-      'Joy and love','Precious times','Making memories',
-      'Beautiful soul','Endless smiles','Always shining'
+      'My heart belongs to you','The moment I fell harder','Your smile, my weakness',
+      'Us against the world','Pure love','Best thing in my life',
+      'My golden girl','Forever in my heart','Sweetest memories together',
+      'You and me, always','Our precious moments','Making forever memories',
+      'My beautiful love','Your smile lights my world','Always and forever yours'
     ];
     const g = document.getElementById('galleryMasonry');
     for (let i = 1; i <= TOTAL_PHOTOS; i++) {
